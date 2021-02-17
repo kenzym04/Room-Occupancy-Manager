@@ -1,4 +1,4 @@
-# Hotel Coding Challenge
+# Room Occupancy Manager
 
 Build a room occupancy optimization tool for one of our hotel clients! Our customer has a certain number of free rooms each night, as well as potential guests that would like to book a room for that night.
 
