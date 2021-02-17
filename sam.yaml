@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Transform: AWS::Serverless-2016-10-31
+Transform: AWS::Serverless-#
 Description: Smart Host Code Challenge API written with SpringBoot based on the aws-serverless-java-container library
 
 Globals:
@@ -12,7 +12,7 @@ Resources:
     Type: AWS::Serverless::Function
     Properties:
       Handler: com.smart_host.rooms.api.StreamLambdaHandler::handleRequest
-      Runtime: java8
+      Runtime: java11
       CodeUri: target/occupancy-1.0-SNAPSHOT.jar
       MemorySize: 256
       Policies: AWSLambdaBasicExecutionRole
