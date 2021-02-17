@@ -1,0 +1,32 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Smart Host Code Challenge API written with SpringBoot based on the aws-serverless-java-container library
+
+Globals:
+  Api:
+    # API Gateway regional endpoints
+    EndpointConfiguration: REGIONAL
+
+Resources:
+  SmartHostCodeChallengeOptimizeRoomsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.smart_host.rooms.api.StreamLambdaHandler::handleRequest
+      Runtime: java8
+      CodeUri: target/occupancy-1.0-SNAPSHOT.jar
+      MemorySize: 256
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 60
+      Events:
+        GetResource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+
+Outputs:
+  SpringBootSmartHostCodeChallengeApi:
+    Description: URL for application
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/rooms?economy=3&premium=3'
+    Export:
+      Name: SpringBootSmartHostCodeChallengeApi
