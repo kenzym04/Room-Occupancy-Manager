@@ -30,7 +30,7 @@ Free Premium rooms: 7 Free Economy rooms: 1
 Usage Premium: 7 (EUR 1153) Usage Economy: 1 (EUR 45)
 
 # Deploying
-Make sure that you have installed "awslabs/aws-sam-cli" and an AWS account.
+Make sure that you have installed "awslabs/aws-sam-cli" and an AWS account
 
 Update the `deploy.sh` file to change the `s3-bucket` and `stack-name` parameters.
 
