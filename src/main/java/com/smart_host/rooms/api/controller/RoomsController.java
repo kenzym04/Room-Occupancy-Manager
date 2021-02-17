@@ -28,7 +28,7 @@ public class RoomsController {
         this.optimizer = new PremiumEconomyPremiumOccupancyOptimizer();
     }
 
-    // /rooms?economy=3&premium=3&anotherRoomType=0
+    
     @RequestMapping(path = "/rooms", method = RequestMethod.GET)
     public ResponseEntity<?> listRoomOccupancyOptimization(@RequestParam Map<String,String> roomTypeAvailabilityMap) throws Exception {
         try {
@@ -48,7 +48,6 @@ public class RoomsController {
 
     /**
      * Loads potential clients based on a static resource. The URL could be set by configuration or env vars.
-     * Left hardcoded in here due to time constrains.
      * @return a list of potential clients containing the amount they are willing to pay for a room.
      */
     private List<Double> loadPotentialClients() {
